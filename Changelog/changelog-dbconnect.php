@@ -27,6 +27,9 @@
 					die("Error while connecting to the database: ".mysqli_error($sql));
 				}
 			}
-			$this->link = $sql;
+			else
+			{
+				$this->link = $sql;
+			}
 		}
 	}
