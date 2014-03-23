@@ -31,14 +31,27 @@
 		public function check_submit_form()
 		{
 			$description=$this->clean_up($_POST["description"]);
+			$type=$_POST["change_type"];
 			if(empty($description))
 				$this->show_error("EMPTY");
 			elseif(strlen($description)>$this->description_length)
 				$this->show_error("DESC_LENGTH");
-			elseif(!validate_type($_POST["change_type"]))
+			elseif(!$this->validate_type($type))
 				$this->show_error("INVALID_TYPE");
 			else
 				$this->update_changelog($type,$description);
+		}
+		
+		// Checking change type just in case
+		public function validate_type($type)
+		{
+			switch($type)
+			{
+				case "a": return 1; break;
+				case "f": return 1; break;
+				case "r": return 1; break;
+				default: return 0;
+			}
 		}
 		
 		// Cleaning up method that adds escaping, cleaning, and probably more if needed (to be changed)
