@@ -31,21 +31,12 @@
 		public function check_submit_form()
 		{
 			$description=$this->clean_up($_POST["description"]);
-			if(!empty($description))
-			{
-				if(strlen($description)<$this->description_length)
-				{
-					// Do something
-				}
-				else
-				{
-					$this->show_error("DESC_LENGTH");
-				}
-			}
-			else
-			{
+			if(empty($description))
 				$this->show_error("EMPTY");
-			}
+			elseif(strlen($description)>$this->description_length)
+				$this->show_error("DESC_LENGTH");
+			else
+				$this->update_changelog($description);
 		}
 		
 		// Cleaning up method that adds escaping, cleaning, and probably more if needed (to be changed)
