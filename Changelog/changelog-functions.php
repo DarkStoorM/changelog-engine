@@ -102,11 +102,16 @@
 		public function get_changes()
 		{
 			$sql=$this->db("SELECT * FROM `changelog`.`changes` ORDER BY `id` DESC");
-			while($r=mysqli_fetch_array($sql))
+			
+			if(mysqli_num_rows($sql)>0)
 			{
-				$rows[]=array("id" => $r[0], "type" => $r[1], "description" => $r[2], "date" => $r[3]);
+				while($r=mysqli_fetch_array($sql))
+				{
+					$date=explode(" ",$r[3]);
+					$rows[]=array("id" => $r[0], "type" => $r[1], "description" => $r[2], "date" => $date[0]);
+				}
+				
+				return $rows;
 			}
-
-			return $rows;
 		}
 	}
