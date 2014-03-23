@@ -55,4 +55,10 @@
 			
 			return $str;
 		}
+		
+		public function show_error($code)
+		{
+			global $settings;
+			echo $settings["errors"][$code];
+		}
 	}
