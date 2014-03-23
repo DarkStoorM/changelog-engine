@@ -6,7 +6,7 @@ USE `changelog`;
 CREATE TABLE IF NOT EXISTS `changes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `type` set('a','f','r') NOT NULL DEFAULT 'a',
-  `description` varchar(100) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
