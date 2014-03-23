@@ -57,4 +57,29 @@
 			global $settings;
 			echo $settings["errors"][$code];
 		}
+		
+		// Changelog updating method, inserting Description from the paramater
+		public function update_changelog($str)
+		{
+			// something
+		}
+		
+		// Query method
+		public function db($query)
+		{
+			$link = $this->link;
+			$sql=mysqli_query($link,$query);
+			
+			if($sql)
+			{
+				return $sql;
+			}
+			else
+			{
+				if(DEBUG)
+				{
+					die("Error while executing query: ".mysqli_error($link));
+				}
+			}
+		}
 	}
