@@ -25,14 +25,23 @@
 		
 		public function check_submit_form()
 		{
+			global $settings;
+			
 			$description=$this->clean_up($_POST["description"]);
 			if(!empty($description))
 			{
-				// Do something
+				if(strlen($description)<$settings["description_length"])
+				{
+					// Do something
+				}
+				else
+				{
+					$this->show_error("DESC_LENGTH");
+				}
 			}
 			else
 			{
-				$this->show_error("1");
+				$this->show_error("EMPTY");
 			}
 		}
 		
