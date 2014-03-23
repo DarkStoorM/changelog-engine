@@ -7,3 +7,4 @@
 	// $CL = new changelog_db($param);
 	
 	require("changelog-functions.php");
+	$changelog = new changelog($settings);
