@@ -29,22 +29,4 @@
 			}
 			$this->link = $sql;
 		}
-		
-		public function db($query)
-		{
-			$link = $this->link;
-			$sql=mysqli_query($link,$query);
-			
-			if($sql)
-			{
-				return $sql;
-			}
-			else
-			{
-				if(DEBUG)
-				{
-					die("Error while executing query: ".mysqli_error($link));
-				}
-			}
-		}
 	}
