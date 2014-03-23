@@ -1,5 +1,5 @@
 <form method="POST">
-	<select>
+	<select name="change_type">
 		<option value="a">Add</option>
 		<option value="f">Fix</option>
 		<option value="r">Remove</option>
