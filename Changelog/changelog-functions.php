@@ -3,6 +3,7 @@
 	{
 		public $description_length = null;
 		
+		// Store needed settings
 		public function __construct($settings)
 		{
 			global $settings;
@@ -10,11 +11,14 @@
 			$this->description_length=$settings["description_length"];
 		}
 		
+		/* Load the form from a different file.
+		 * Changed to different file because of adding styles, changing form fields order */
 		public function form()
 		{
 			include("changelog-form.php");
 		}
 		
+		// This is the only method you should call to submit your form
 		public function submit()
 		{
 			if(isset($_POST["submit_change"]))
@@ -23,14 +27,13 @@
 			}
 		}
 		
+		// Method that validates our form
 		public function check_submit_form()
 		{
-			global $settings;
-			
 			$description=$this->clean_up($_POST["description"]);
 			if(!empty($description))
 			{
-				if(strlen($description)<$settings["description_length"])
+				if(strlen($description)<$this->description_length)
 				{
 					// Do something
 				}
@@ -45,6 +48,7 @@
 			}
 		}
 		
+		// Cleaning up method that adds escaping, cleaning, and probably more if needed (to be changed)
 		public function clean_up($str)
 		{
 			$str=trim($str);
@@ -56,6 +60,7 @@
 			return $str;
 		}
 		
+		// Error-throwing method
 		public function show_error($code)
 		{
 			global $settings;
