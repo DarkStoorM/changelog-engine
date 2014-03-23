@@ -2,12 +2,14 @@
 	class changelog
 	{
 		public $description_length = null;
+		private $sqlLink = null;
 		
 		// Store needed settings
-		public function __construct($settings)
+		public function __construct($link)
 		{
 			global $settings;
 			
+			$this->sqlLink=$link;
 			$this->description_length=$settings["description_length"];
 		}
 		
