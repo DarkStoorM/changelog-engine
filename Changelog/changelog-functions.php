@@ -14,4 +14,12 @@
 		{
 			include("changelog-form.php");
 		}
+		
+		public function submit()
+		{
+			if(isset($_POST["submit_change"]))
+			{
+				$this->check_submit_form();
+			}
+		}
 	}
