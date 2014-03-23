@@ -1,4 +1,4 @@
-Changelog simple engine !(http://puu.sh/77JnR.png)
+Changelog simple engine
 ==
 
 This is a small project that I'm integrating with my personal website and Browser Game.
