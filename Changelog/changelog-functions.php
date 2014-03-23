@@ -22,4 +22,28 @@
 				$this->check_submit_form();
 			}
 		}
+		
+		public function check_submit_form()
+		{
+			$description=$this->clean_up($_POST["description"]);
+			if(!empty($description))
+			{
+				// Do something
+			}
+			else
+			{
+				$this->show_error("1");
+			}
+		}
+		
+		public function clean_up($str)
+		{
+			$str=trim($str);
+			
+			$to_replace=array("'",'"');
+			$replace_with=array("\'", "\"");
+			$str=str_ireplace($to_replace, $replace_with, $str);
+			
+			return $str;
+		}
 	}
