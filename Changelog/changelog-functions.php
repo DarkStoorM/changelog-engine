@@ -35,8 +35,10 @@
 				$this->show_error("EMPTY");
 			elseif(strlen($description)>$this->description_length)
 				$this->show_error("DESC_LENGTH");
+			elseif(!validate_type($_POST["change_type"]))
+				$this->show_error("INVALID_TYPE");
 			else
-				$this->update_changelog($description);
+				$this->update_changelog($type,$description);
 		}
 		
 		// Cleaning up method that adds escaping, cleaning, and probably more if needed (to be changed)
@@ -59,15 +61,15 @@
 		}
 		
 		// Changelog updating method, inserting Description from the paramater
-		public function update_changelog($str)
+		public function update_changelog($type,$description)
 		{
-			// something
+			$this->db("INSERT INTO `changelog`.`changes` (`id`, `type`, `description`, `date`) VALUES (NULL, '".$type."', '".$description."', CURRENT_DATE());");
 		}
 		
 		// Query method
 		public function db($query)
 		{
-			$link = $this->link;
+			$link = $this->sqlLink;
 			$sql=mysqli_query($link,$query);
 			
 			if($sql)
