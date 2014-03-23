@@ -12,8 +12,6 @@
 	if(defined('DEBUG');
 		error_reporting(E_ALL); // Just show everything
 	
-	$show_date = false;
-	$description_lenght = 100;
+	$description_length = 100;
 	
-	$settings = array("show_date" => $show_date,
-		"description_lenght" => $description_lenght);
+	$settings = array("description_length" => $description_length);
