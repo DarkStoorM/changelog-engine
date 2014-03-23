@@ -8,4 +8,4 @@ Features
 --
 * Type of changes `add`, `fix`, `remove`
 * Description
-* Date (optionally)
+* Date (optional)
