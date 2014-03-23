@@ -22,7 +22,7 @@
 			$sql=mysqli_connect($this->host, $this->user, $this->pass, $this->db_name);
 			if(!$sql)
 			{
-				if(DEBUG)
+				if(CH_DEBUG)
 				{
 					die("Error while connecting to the database: ".mysqli_error($sql));
 				}
