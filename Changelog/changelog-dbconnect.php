@@ -1,7 +1,6 @@
 <?php
-	define("DEBUG",1);
-	
 	/* Parameters passed by new changelog_db($param);
+	 * params set in changelog-settings.php
 	 * $param[0] = host
 	 * $param[1] = user
 	 * $param[2] = password

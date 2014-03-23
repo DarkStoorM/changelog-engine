@@ -1,8 +1,5 @@
 <?php
-	$param[0]=""; // Host
-	$param[1]=""; // User
-	$param[2]=""; // Password
-	$param[3]=""; // Database
+	require("changelog-settings.php");
 	
 	/* DB connection is optional
 	 * Leave the require() and new instance commented if you use own DB connection */ 
