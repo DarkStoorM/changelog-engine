@@ -91,7 +91,7 @@
 			}
 			else
 			{
-				if(DEBUG)
+				if(CH_DEBUG)
 				{
 					die("Error while executing query: ".mysqli_error($link));
 				}
