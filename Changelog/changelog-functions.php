@@ -97,4 +97,16 @@
 				}
 			}
 		}
+		
+		// Fetch changelog records
+		public function get_changes()
+		{
+			$sql=$this->db("SELECT * FROM `changelog`.`changes` ORDER BY `id` DESC");
+			while($r=mysqli_fetch_array($sql))
+			{
+				$rows[]=array("id" => $r[0], "type" => $r[1], "description" => $r[2], "date" => $r[3]);
+			}
+
+			return $rows;
+		}
 	}
