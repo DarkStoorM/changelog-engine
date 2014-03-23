@@ -14,7 +14,8 @@
 	
 	$description_length = 100;
 	$error_codes = array("EMPTY" => "Empty description.",
-		"DESC_LENGTH" => "Your description is too long. Your maximum length is: ".$description_length);
+		"DESC_LENGTH" => "Your description is too long. Your maximum length is: ".$description_length,
+		"INVALID_TYPE" => "Invalid change type.");
 	
 	$settings = array("description_length" => $description_length,
 		"errors" => $error_codes);
