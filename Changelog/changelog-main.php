@@ -7,4 +7,9 @@
 	// $CL = new changelog_db($param);
 	
 	require("changelog-functions.php");
-	$changelog = new changelog($settings);
+	/* PROVIDE YOUR MYSQLI LINK ARGUMENT!
+	 * If you are using your own MySQLI connection, replace given $link argument.
+	 * or if you use connection from this file, use:
+	 * 	$CL->link
+	 */
+	$changelog = new changelog($link);
