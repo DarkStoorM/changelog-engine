@@ -79,6 +79,7 @@
 		public function update_changelog($type,$description)
 		{
 			$this->db("INSERT INTO `changelog`.`changes` (`id`, `type`, `description`, `date`) VALUES (NULL, '".$type."', '".$description."', CURRENT_DATE());");
+			header("Location:  ".$_SERVER["REQUEST_URI"]);
 		}
 		
 		// Query method
