@@ -1,4 +1,4 @@
-#Changelog simple engine ![lel](http://puu.sh/77JnR.png)
+#Changelog simple engine
 
 ###Description
 This is a small project that I'm integrating with my personal website and Browser Game.
@@ -86,11 +86,11 @@ Easiest way to use types that you want to show on your website is to `switch()` 
         and just echo the image
 You can get something like this:
 
-![img](http://puu.sh/7GsiQ.png) 2014-03-23 - Added something.
+(add icon) 2014-03-23 - Added something.
 
-![img](http://puu.sh/7Gsjy.png) 2014-03-23 - Fixed something.
+(fix icon) 2014-03-23 - Fixed something.
 
-![img](http://puu.sh/7GshH.png) 2014-03-23 - Removed something.
+(remove icon) 2014-03-23 - Removed something.
 
 ##Date
 The date format is **YYYY-MM-DD** and you can do whatever you like with this date.
